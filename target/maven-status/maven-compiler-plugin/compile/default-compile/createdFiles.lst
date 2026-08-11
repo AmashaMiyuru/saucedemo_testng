@@ -1,0 +1,5 @@
+com\saucedemo\pages\CheckoutPage.class
+com\saucedemo\pages\CartPage.class
+com\saucedemo\pages\LoginPage.class
+com\saucedemo\base\BaseTest.class
+com\saucedemo\pages\InventoryPage.class
