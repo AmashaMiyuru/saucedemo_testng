@@ -46,6 +46,17 @@ public class SauceDemoTests extends BaseTest {
     }
 
     @Test
+    public void testMissingFirstNameValidation() {
+        loginPage.login("standard_user", "secret_sauce");
+        inventoryPage.addBackpackToCart();
+        inventoryPage.goToCart();
+        cartPage.clickCheckout();
+        checkoutPage.enterInformation("", "Doe", "12345");
+        checkoutPage.clickContinue();
+        Assert.assertEquals(checkoutPage.getErrorMessage(), "Error: First Name is required");
+    }
+
+    @Test
     public void testEndToEndCheckout() {
         loginPage.login("standard_user", "secret_sauce");
         inventoryPage.addBackpackToCart();
